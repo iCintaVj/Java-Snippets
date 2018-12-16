@@ -1,0 +1,19 @@
+import java.util.*;
+class Hello {
+    public static void main(String args[] ) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        long a=sc.nextLong(),b=sc.nextLong();
+        long n=gcd(a,b),result=0;
+        for(int i=1; i<=Math.sqrt(n); i++){
+            if(n%i==0){
+                if(n/i==i) result++;
+                else result+=2;
+            }
+        }
+        System.out.println(result);
+    }
+        public static long gcd(long a,long b){
+            if(a==0) return b;
+            return gcd(b%a,a);
+        }
+}
