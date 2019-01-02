@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.*;
-class MatrixPath    {
+class MatrixPathCount    {
 	// Function to print the route taken
 	public static void printPath(List<Integer> path, int last)  {
 		for (int i : path) {
