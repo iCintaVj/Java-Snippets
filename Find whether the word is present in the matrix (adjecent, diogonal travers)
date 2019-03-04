@@ -25,6 +25,7 @@ public class Hello {
         if(index==s.length()-1) return true;
         if(s.charAt(index)!=arr[i][j]) return false;
         arr[i][j]='0';
+	char l=arr[i][j];
             if(i-1>=0 && j-1>=0 && find(arr,i-1,j-1,r,c,s,index+1)){
                 return true;
             }
@@ -49,6 +50,7 @@ public class Hello {
             if(i+1<r && j+1<c && find(arr,i+1,j+1,r,c,s,index+1)){
                 return true;
             }
+	arr[i][j]=l;
         return  false;
 	}
 }
