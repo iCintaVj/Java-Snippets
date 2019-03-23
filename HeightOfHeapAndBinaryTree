@@ -1,0 +1,8 @@
+import java.util.*;
+class MaxHeight{
+	public static void main (String[] args){
+	   Scanner sc = new Scanner(System.in);
+	   int n=sc.nextInt();
+	   System.out.print((int)Math.ceil( Math.log(n +1) / Math.log(2)) - 1);
+	 }
+}
