@@ -1,15 +1,12 @@
-import java.util.*;
-public class Permutation 
+public class Permutation
 { 
 	public static void main(String[] args) 
 	{ 
-	    Scanner sc=new Scanner(System.in);
-		String str = sc.next();
-		int n = str.length(); 
-		Permutation permutation = new Permutation(); 
-		permutation.permute(str, 0, n-1); 
+		String str = "abcde";
+		permute(str, 0, str.length()-1); 
+		System.out.print(str);
 	} 
-	private void permute(String str, int l, int r) 
+	private static void permute(String str, int l, int r) 
 	{ 
 		if (l == r) {
 		    System.out.println(str); 
@@ -25,7 +22,7 @@ public class Permutation
 			} 
 		} 
 	} 
-	public String swap(String a, int i, int j) 
+	public static String swap(String a, int i, int j) 
 	{ 
 		char temp; 
 		char[] charArray = a.toCharArray(); 
