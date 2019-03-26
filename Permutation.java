@@ -4,7 +4,6 @@ public class Permutation
 	{ 
 		String str = "abcde";
 		permute(str, 0, str.length()-1); 
-		System.out.print(str);
 	} 
 	private static void permute(String str, int l, int r) 
 	{ 
