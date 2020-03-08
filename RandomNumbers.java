@@ -1,5 +1,5 @@
-import java.io.FileWriter;   // Import the FileWriter class
-import java.io.IOException;  // Import the IOException class to handle errors
+import java.io.FileWriter;   
+import java.io.IOException;  
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.*; 
@@ -34,6 +34,3 @@ public class RandomNumbers {
     }
   }
 }
-
-
-//   String.format("%013d",aList.get(i))
