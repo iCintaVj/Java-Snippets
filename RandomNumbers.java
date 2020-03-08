@@ -1,3 +1,15 @@
+/**
+ * This programs creates a file and write random integers from 99999999999 to 9999999999999 with delimiter ','
+ * 
+ * We can use this as a data set for testing in machine learning algorithms such as Knn
+ * 
+ * each row will contain data as below
+ * 
+ * eg.    ->   1,2,3,4,5,6,7,8,9,0,1
+ */
+
+
+
 import java.io.FileWriter;   
 import java.io.IOException;  
 import java.util.*;
