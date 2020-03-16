@@ -1,0 +1,24 @@
+/**
+* The Following Programming Snippet Helped me to DO HTTP Requests in Java.
+* For that, you will need apache dependency "org.apache.httpcomponents:httpclient:4.5.11"
+*/
+
+package com.zoho.assist.gateway.stories.gwloadtest;
+
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+import java.lang.*;
+
+public class APICalls {
+    public static void main(String args[]) {
+        String url = "https://api.github.com/repos/icintavj/Java";
+        HttpGet liveSessions = new HttpGet(url);
+        try (CloseableHttpResponse responseLiveSessions = HttpClients.createDefault().execute ( liveSessions );) {
+            System.out.print( EntityUtils.toString(responseLiveSessions.getEntity())+"\n");
+        }
+        catch (Exception e) { e.printStackTrace (); }
+    }
+}
+
