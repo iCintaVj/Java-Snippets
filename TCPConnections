@@ -1,0 +1,66 @@
+import java.io.*;
+import java.util.*;
+import java.net.*;
+
+ class TCPConnections {
+    private Socket socket		 = null;
+    private DataInputStream input = null;
+    private  DataOutputStream dos = null;
+    private Scanner sc = new Scanner(System.in);
+
+    public TCPConnections(){}
+
+    public TCPConnections(String address, int port, int sNo)
+    {
+        // establish a connection
+        try
+        {
+            socket = new Socket(address, port);
+            System.out.println ("Connected-"+sNo);
+            // takes input from terminal
+            input = new DataInputStream(socket.getInputStream());
+            dos = new DataOutputStream(socket.getOutputStream());
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        try
+        {
+
+            String msg = ("Message Here");
+           System.out.println (input.readLine ());
+
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        try
+        {
+            Thread.sleep(1000 * 60 * 60);
+            input.close();
+            socket.close();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
+    }
+
+    static int i = 0;
+    public static int getI(){
+        return ++i;
+    }
+
+    public static void main(String[] args) throws Exception {
+        for(int i=0; i<1; i++) {
+            new Thread( () -> {
+                new TCPConnections ("addressHere",portHere,getI());
+            } ).start ();
+        }
+    }
+
+} 
